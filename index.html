@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Electricity-SI — Autonomous Solar-Storage-Diesel Microgrid Orchestration</title>
     <script src="https://cdn.tailwindcss.com/3.4.17"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
@@ -17,57 +15,30 @@
                         mono: ['JetBrains Mono', 'monospace'],
                     },
                     colors: {
-                        brand: {
-                            50: '#ecfdf5',
-                            100: '#d1fae5',
-                            400: '#34d399',
-                            500: '#10b981',
-                            600: '#059669',
-                            700: '#047857',
-                            900: '#064e3b',
-                        },
-                        amber: {
-                            400: '#fbbf24',
-                            500: '#f59e0b',
-                        },
-                        cyan: {
-                            400: '#22d3ee',
-                            500: '#06b6d4',
-                        }
+                        brand: { 50: '#ecfdf5', 400: '#34d399', 500: '#10b981', 900: '#064e3b' },
+                        amber: { 400: '#fbbf24', 500: '#f59e0b' },
+                        cyan: { 400: '#22d3ee', 500: '#06b6d4' }
                     }
                 }
             }
         }
     </script>
     <style>
-        .glow-emerald {
-            box-shadow: 0 0 45px -10px rgba(16, 185, 129, 0.35);
-        }
-        .glow-cyan {
-            box-shadow: 0 0 40px -8px rgba(6, 182, 212, 0.35);
-        }
+        .glow-emerald { box-shadow: 0 0 45px -10px rgba(16, 185, 129, 0.35); }
         .grid-pattern {
             background-size: 32px 32px;
-            background-image: 
-                linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
-        }
-        @keyframes pulse-slow {
-            0%, 100% { opacity: 0.3; }
-            50% { opacity: 0.8; }
-        }
-        .animate-pulse-slow {
-            animation: pulse-slow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
         }
     </style>
 </head>
-<body id="top" class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-brand-500 selection:text-slate-950">
+<body id="top" class="bg-slate-950 text-slate-100 font-sans antialiased">
 
-    <!-- Header / Navbar -->
+    <!-- Header -->
     <header class="fixed top-0 left-0 right-0 z-40 bg-slate-950/85 backdrop-blur-md border-b border-slate-800/80">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <a href="#top" id="brandLogoLink" class="flex items-center space-x-3 group">
-                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-400 via-emerald-500 to-cyan-500 flex items-center justify-center p-0.5 shadow-lg shadow-brand-500/25 group-hover:scale-105 transition-transform">
+            <a href="#top" class="flex items-center space-x-3 group">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-400 to-cyan-500 flex items-center justify-center p-0.5">
                     <div class="w-full h-full bg-slate-950 rounded-[10px] flex items-center justify-center">
                         <svg class="w-5 h-5 text-brand-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -76,27 +47,16 @@
                 </div>
                 <div class="flex flex-col">
                     <span class="text-xl font-bold tracking-tight text-white flex items-center gap-2">
-                        Electricity-SI <span class="text-[11px] px-2 py-0.5 rounded bg-brand-500/10 text-brand-400 font-mono font-medium border border-brand-500/30">AI</span>
+                        Electricity-SI <span class="text-[11px] px-2 py-0.5 rounded bg-brand-500/10 text-brand-400 border border-brand-500/30">AI</span>
                     </span>
                     <span class="text-[10px] font-mono text-slate-400 tracking-wider uppercase">Solar • Storage • Genset Intelligence</span>
                 </div>
             </a>
-
-            <!-- Desktop Nav -->
-            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-300">
-                <a href="#challenge" class="hover:text-brand-400 transition-colors">The Challenge</a>
-                <a href="#capabilities" class="hover:text-brand-400 transition-colors">Core Engine</a>
-                <a href="#architecture" class="hover:text-brand-400 transition-colors">Claude AI Architecture</a>
-                <a href="#calculator" class="hover:text-brand-400 transition-colors">ROI Calculator</a>
-                <a href="#compatibility" class="hover:text-brand-400 transition-colors">Compatibility</a>
-            </nav>
-
-            <!-- Actions -->
             <div class="flex items-center space-x-4">
-                <a href="#calculator" class="hidden sm:inline-flex items-center text-xs font-semibold text-slate-300 hover:text-white px-3.5 py-2 rounded-lg border border-slate-700/80 hover:border-slate-600 transition-all">
-                    Simulate Savings
+                <a href="https://wa.me/971541527985" target="_blank" class="hidden sm:inline-flex items-center text-xs font-mono font-semibold text-brand-400 px-3.5 py-2 rounded-lg border border-brand-500/30 hover:bg-brand-500/10 transition-all">
+                    WhatsApp: +971 54 152 7985
                 </a>
-                <button id="navDemoBtn" class="inline-flex items-center justify-center px-4 py-2 rounded-lg text-xs sm:text-sm font-semibold text-slate-950 bg-gradient-to-r from-brand-400 to-brand-500 hover:from-brand-300 hover:to-brand-400 shadow-md shadow-brand-500/25 transition-all">
+                <button id="navDemoBtn" class="px-4 py-2 rounded-lg text-sm font-semibold text-slate-950 bg-gradient-to-r from-brand-400 to-brand-500 hover:from-brand-300 hover:to-brand-400">
                     Request Pilot
                 </button>
             </div>
@@ -106,761 +66,215 @@
     <main class="relative pt-24">
         <!-- Hero Section -->
         <section class="relative pt-12 pb-20 md:pt-20 md:pb-28 overflow-hidden grid-pattern">
-            <div class="absolute inset-0 bg-gradient-to-b from-brand-950/25 via-slate-950/70 to-slate-950 pointer-events-none"></div>
-
-            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center max-w-3xl mx-auto mb-12">
-                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/90 border border-brand-500/30 text-xs font-medium text-brand-300 mb-6 backdrop-blur">
-                        <span class="w-2 h-2 rounded-full bg-brand-400 animate-pulse"></span>
-                        Autonomous Microgrid Telemetry & Dispatch • Built on Claude 3.5 & 3.7
-                    </div>
-
-                    <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white mb-6 leading-[1.15]">
-                        Slash Diesel Fuel Burn by <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 via-emerald-300 to-cyan-400">Up to 42%</span> in Hybrid Microgrids
-                    </h1>
-
-                    <p class="text-base sm:text-lg text-slate-300 mb-8 leading-relaxed">
-                        <strong class="text-white font-semibold">Electricity-SI</strong> unifies Solar PV arrays, Battery Storage (BESS), and Diesel Gensets. Real-time edge telemetry limits generator starts, eliminates low-load wet stacking, and maximizes clean solar self-consumption.
-                    </p>
-
-                    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                        <button id="heroDemoBtn" class="w-full sm:w-auto px-6 py-3.5 rounded-xl font-semibold text-slate-950 bg-gradient-to-r from-brand-400 to-brand-500 hover:from-brand-300 hover:to-brand-400 shadow-xl shadow-brand-500/25 transition-all flex items-center justify-center gap-2 text-sm">
-                            <span>Deploy Pilot on Your Site</span>
-                            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                            </svg>
-                        </button>
-                        <a href="#calculator" class="w-full sm:w-auto px-6 py-3.5 rounded-xl font-semibold text-slate-200 bg-slate-900 hover:bg-slate-800 border border-slate-700/80 transition-all flex items-center justify-center gap-2 text-sm">
-                            <svg class="w-4 h-4 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
-                            </svg>
-                            <span>Interactive Fuel Simulator</span>
-                        </a>
-                    </div>
+            <div class="relative max-w-7xl mx-auto px-4 text-center">
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white mb-6">
+                    Slash Diesel Fuel Burn by <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-cyan-400">Up to 60%</span>
+                </h1>
+                <p class="text-lg text-slate-300 mb-8 max-w-3xl mx-auto">
+                    Electricity-SI unifies Solar PV arrays (25-year lifespan), Battery Storage (12-year lifespan), and Diesel Gensets. Maximize clean energy, stop generator short-cycling, and secure rapid ROI based on UAE local fuel prices.
+                </p>
+                <div class="flex justify-center gap-4">
+                    <a href="#calculator" class="px-6 py-3.5 rounded-xl font-semibold text-slate-950 bg-gradient-to-r from-brand-400 to-brand-500 flex items-center gap-2">
+                        Calculate Fuel Savings
+                    </a>
+                    <a href="https://wa.me/971541527985" target="_blank" class="px-6 py-3.5 rounded-xl font-semibold text-slate-200 bg-slate-900 border border-slate-700/80 flex items-center gap-2">
+                        Contact via WhatsApp
+                    </a>
                 </div>
+            </div>
+        </section>
 
-                <!-- Live Interactive Telemetry Dashboard Mockup -->
-                <div class="max-w-5xl mx-auto bg-slate-900/90 rounded-2xl border border-slate-800 shadow-2xl overflow-hidden glow-emerald backdrop-blur-xl">
-                    <div class="px-5 py-3.5 bg-slate-950/80 border-b border-slate-800 flex items-center justify-between">
-                        <div class="flex items-center space-x-2">
-                            <span class="w-3 h-3 rounded-full bg-red-500/80"></span>
-                            <span class="w-3 h-3 rounded-full bg-amber-500/80"></span>
-                            <span class="w-3 h-3 rounded-full bg-brand-500/80"></span>
-                            <span class="ml-2 text-xs font-mono text-slate-400">Node_ID: ESI-AZ90 // Industrial Off-Grid Site (Electricity-SI Active)</span>
-                        </div>
-                        <div class="flex items-center gap-2">
-                            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-brand-500/10 text-brand-400 text-xs font-mono font-medium border border-brand-500/20">
-                                <span class="w-1.5 h-1.5 rounded-full bg-brand-400 animate-ping"></span>
-                                AI OPTIMIZATION: ACTIVE
-                            </span>
-                        </div>
+        <!-- System Advantages -->
+        <section id="capabilities" class="py-20 bg-slate-900/50">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-xs uppercase font-mono tracking-widest text-brand-400 mb-3">Long-Term Value</h2>
+                    <h3 class="text-3xl font-extrabold text-white sm:text-4xl">
+                        Why Upgrade to Hybrid Solar-Storage?
+                    </h3>
+                </div>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800">
+                        <h4 class="text-lg font-bold text-brand-400 mb-2">25-Year Solar Generation</h4>
+                        <p class="text-sm text-slate-400">Tier-1 PV modules guarantee a 25-year performance lifecycle. Once paid off, you generate zero-marginal-cost electricity for decades, entirely isolated from crude oil price volatility.</p>
                     </div>
-
-                    <div class="p-6 md:p-8">
-                        <!-- Power Balance Grid -->
-                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-                            <!-- Solar -->
-                            <div class="bg-slate-950/70 p-4 rounded-xl border border-slate-800/80">
-                                <div class="flex items-center justify-between text-xs text-slate-400 mb-1 font-mono">
-                                    <span>SOLAR PV</span>
-                                    <span class="text-amber-400 font-semibold">98.4% YIELD</span>
-                                </div>
-                                <div class="text-2xl font-bold font-mono text-amber-400" id="liveSolarVal">480 kW</div>
-                                <div class="mt-2 text-[11px] text-slate-400 flex items-center gap-1">
-                                    <span class="text-brand-400 font-medium">▲ +18 kW</span> solar tracking boost
-                                </div>
-                            </div>
-
-                            <!-- BESS -->
-                            <div class="bg-slate-950/70 p-4 rounded-xl border border-slate-800/80">
-                                <div class="flex items-center justify-between text-xs text-slate-400 mb-1 font-mono">
-                                    <span>BESS STORAGE</span>
-                                    <span class="text-cyan-400 font-semibold" id="liveSocBadge">82% SOC</span>
-                                </div>
-                                <div class="text-2xl font-bold font-mono text-cyan-400" id="liveBessVal">170 kW</div>
-                                <div class="mt-2 text-[11px] text-slate-400 flex items-center gap-1">
-                                    <span>Mode:</span> <span class="text-cyan-300 font-mono">Dynamic Smoothing</span>
-                                </div>
-                            </div>
-
-                            <!-- Genset -->
-                            <div class="bg-slate-950/70 p-4 rounded-xl border border-slate-800/80">
-                                <div class="flex items-center justify-between text-xs text-slate-400 mb-1 font-mono">
-                                    <span>DIESEL GENSET</span>
-                                    <span class="text-brand-400 font-semibold bg-brand-500/10 px-1.5 py-0.5 rounded">SUPPRESSED</span>
-                                </div>
-                                <div class="text-2xl font-bold font-mono text-brand-400" id="liveGensetVal">0 kW</div>
-                                <div class="mt-2 text-[11px] text-slate-400 flex items-center gap-1">
-                                    <span>Start avoided:</span> <span class="text-brand-400 font-mono font-medium">58 mins ago</span>
-                                </div>
-                            </div>
-
-                            <!-- Demand -->
-                            <div class="bg-slate-950/70 p-4 rounded-xl border border-slate-800/80">
-                                <div class="flex items-center justify-between text-xs text-slate-400 mb-1 font-mono">
-                                    <span>TOTAL LOAD</span>
-                                    <span class="text-slate-400 font-semibold">100% SERVED</span>
-                                </div>
-                                <div class="text-2xl font-bold font-mono text-white" id="liveLoadVal">650 kW</div>
-                                <div class="mt-2 text-[11px] text-slate-400 flex items-center gap-1">
-                                    <span class="text-brand-400">50.00 Hz</span> grid-forming stability
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Live AI Decision Stream -->
-                        <div class="bg-slate-950/85 rounded-xl p-4 border border-slate-800 font-mono text-xs">
-                            <div class="flex items-center justify-between text-slate-400 pb-2 mb-2 border-b border-slate-800/60">
-                                <span class="flex items-center gap-2 text-slate-300 font-semibold">
-                                    <svg class="w-4 h-4 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                                    </svg>
-                                    Electricity-SI Supervisory Horizon (Rolling 15-Minute Window)
-                                </span>
-                                <span class="text-brand-400 text-[11px]" id="liveTimestamp">2026-10-18 15:05:22 UTC</span>
-                            </div>
-                            <div class="space-y-1.5 text-slate-300">
-                                <div class="flex items-start gap-2">
-                                    <span class="text-slate-500 font-mono">[T-15s]</span>
-                                    <span class="text-slate-200">Local irradiance forecast indicates heavy cloud attenuation in 3 mins (-140 kW delta).</span>
-                                </div>
-                                <div class="flex items-start gap-2">
-                                    <span class="text-slate-500 font-mono">[T-10s]</span>
-                                    <span class="text-amber-300 font-medium">Standard PLC default:</span> Cold-start Genset #2 (Fuel cost penalty: $42.50, 1 cycle wear).
-                                </div>
-                                <div class="flex items-start gap-2">
-                                    <span class="text-slate-500 font-mono">[T-02s]</span>
-                                    <span class="text-brand-400 font-semibold">Electricity-SI Claude Agent override:</span> Injected 140 kW discharge buffer from BESS inverter; restricted Genset startup. Net diesel saved: 18.2 Liters.
-                                </div>
-                            </div>
-                        </div>
+                    <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800">
+                        <h4 class="text-lg font-bold text-cyan-400 mb-2">12-Year BESS Durability</h4>
+                        <p class="text-sm text-slate-400">Industrial-grade Liquid-Cooled LFP Battery Systems designed for harsh Middle East environments, delivering 12+ years of heavy-duty cycle life and grid-forming stability.</p>
+                    </div>
+                    <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800">
+                        <h4 class="text-lg font-bold text-amber-400 mb-2">Eliminate Genset Wear</h4>
+                        <p class="text-sm text-slate-400">Stop running massive diesel engines at 30% load just to maintain spinning reserves. Our system turns off gensets entirely during the day, drastically reducing maintenance overhauls.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Problem Section -->
-        <section id="challenge" class="py-20 bg-slate-900/50 border-t border-b border-slate-800/60">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- ROI & Sizing Calculator -->
+        <section id="calculator" class="py-20 bg-slate-950 border-t border-slate-800">
+            <div class="max-w-7xl mx-auto px-4">
                 <div class="text-center max-w-3xl mx-auto mb-16">
-                    <h2 class="text-xs uppercase font-mono tracking-widest text-brand-400 mb-3">The Microgrid Dilemma</h2>
-                    <h3 class="text-3xl font-extrabold text-white tracking-tight sm:text-4xl">
-                        Why Traditional Microgrids Burn Too Much Diesel
+                    <h2 class="text-xs uppercase font-mono tracking-widest text-brand-400 mb-3">System Sizer & Fuel Simulator</h2>
+                    <h3 class="text-3xl font-extrabold text-white sm:text-4xl">
+                        Discover Your Ideal Setup & Payback Time
                     </h3>
-                    <p class="mt-4 text-base text-slate-300">
-                        Rule-based PLCs lack predictive foresight. They over-spin generators, cycle engines unnecessarily, and curtail clean solar when batteries experience temporary load shifts.
-                    </p>
-                </div>
-
-                <div class="grid md:grid-cols-3 gap-8">
-                    <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800/80 hover:border-red-500/30 transition-all">
-                        <div class="w-12 h-12 rounded-xl bg-red-500/10 text-red-400 flex items-center justify-center mb-5 font-mono font-bold text-lg border border-red-500/20">
-                            01
-                        </div>
-                        <h4 class="text-lg font-bold text-white mb-2">Costly Genset Short-Cycling</h4>
-                        <p class="text-sm text-slate-400 leading-relaxed">
-                            Conventional controllers fire up diesel generators every time load momentarily spikes, causing catastrophic wet stacking, carbon build-up, and tripled maintenance overhauls.
-                        </p>
-                    </div>
-
-                    <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800/80 hover:border-amber-500/30 transition-all">
-                        <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center mb-5 font-mono font-bold text-lg border border-amber-500/20">
-                            02
-                        </div>
-                        <h4 class="text-lg font-bold text-white mb-2">Solar Inversion & Curtailment</h4>
-                        <p class="text-sm text-slate-400 leading-relaxed">
-                            Without foresight into upcoming industrial shifts or weather fronts, energy managers throttle solar arrays to preserve spinning reserves, throwing away free kWh.
-                        </p>
-                    </div>
-
-                    <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800/80 hover:border-cyan-500/30 transition-all">
-                        <div class="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center mb-5 font-mono font-bold text-lg border border-cyan-500/20">
-                            03
-                        </div>
-                        <h4 class="text-lg font-bold text-white mb-2">Premature Battery Degradation</h4>
-                        <p class="text-sm text-slate-400 leading-relaxed">
-                            Aggressive micro-cycling without state-of-health (SoH) awareness degrades lithium cells rapidly, destroying CAPEX returns before the project hits year four.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Capabilities -->
-        <section id="capabilities" class="py-20">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center max-w-3xl mx-auto mb-16">
-                    <h2 class="text-xs uppercase font-mono tracking-widest text-brand-400 mb-3">Enterprise AI Solution</h2>
-                    <h3 class="text-3xl font-extrabold text-white tracking-tight sm:text-4xl">
-                        Precision Orchestration at Every Microgrid Node
-                    </h3>
-                    <p class="mt-4 text-base text-slate-300">
-                        Electricity-SI combines deterministic physics modeling with Claude's contextual reasoning to execute optimal dispatch commands every 500 milliseconds.
-                    </p>
-                </div>
-
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div class="bg-slate-900/60 p-6 rounded-2xl border border-slate-800 hover:border-brand-500/40 transition-all">
-                        <div class="w-10 h-10 rounded-lg bg-brand-500/10 text-brand-400 flex items-center justify-center mb-4">
-                            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                        </div>
-                        <h4 class="text-base font-bold text-white mb-2">Genset Start Frequency Limiter</h4>
-                        <p class="text-xs text-slate-400 leading-relaxed">
-                            Dynamically enforces minimum run-time and lockout windows while scheduling battery ramp rates, cutting generator start/stop cycles by up to 68%.
-                        </p>
-                    </div>
-
-                    <div class="bg-slate-900/60 p-6 rounded-2xl border border-slate-800 hover:border-brand-500/40 transition-all">
-                        <div class="w-10 h-10 rounded-lg bg-cyan-500/10 text-cyan-400 flex items-center justify-center mb-4">
-                            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                            </svg>
-                        </div>
-                        <h4 class="text-base font-bold text-white mb-2">Optimal Throttle & Power Capping</h4>
-                        <p class="text-xs text-slate-400 leading-relaxed">
-                            Prevents diesel engines from operating in inefficient low-load zones (&lt;35% MCR) where fuel consumption per kWh spikes and carbon build-up occurs.
-                        </p>
-                    </div>
-
-                    <div class="bg-slate-900/60 p-6 rounded-2xl border border-slate-800 hover:border-brand-500/40 transition-all">
-                        <div class="w-10 h-10 rounded-lg bg-amber-500/10 text-amber-400 flex items-center justify-center mb-4">
-                            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 00-9.78 2.096A4.001 4.001 0 003 15z" />
-                            </svg>
-                        </div>
-                        <h4 class="text-base font-bold text-white mb-2">Cloud-Shadow & Solar Ramp Forecast</h4>
-                        <p class="text-xs text-slate-400 leading-relaxed">
-                            Ingests satellite irradiance and on-site all-sky cameras to predict cloud attenuation 15 minutes ahead, preparing BESS reserve capacity proactively.
-                        </p>
-                    </div>
-
-                    <div class="bg-slate-900/60 p-6 rounded-2xl border border-slate-800 hover:border-brand-500/40 transition-all">
-                        <div class="w-10 h-10 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center mb-4">
-                            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                            </svg>
-                        </div>
-                        <h4 class="text-base font-bold text-white mb-2">Zero-Blackout Resiliency Lock</h4>
-                        <p class="text-xs text-slate-400 leading-relaxed">
-                            Continuous spinning reserve validation guarantees that sudden heavy inductive loads (pumps, crushers, compressors) never trigger microgrid tripping.
-                        </p>
-                    </div>
-
-                    <div class="bg-slate-900/60 p-6 rounded-2xl border border-slate-800 hover:border-brand-500/40 transition-all">
-                        <div class="w-10 h-10 rounded-lg bg-indigo-500/10 text-indigo-400 flex items-center justify-center mb-4">
-                            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                            </svg>
-                        </div>
-                        <h4 class="text-base font-bold text-white mb-2">BESS Life Cycle Preserver</h4>
-                        <p class="text-xs text-slate-400 leading-relaxed">
-                            Optimizes depth-of-discharge (DoD) and C-rates against thermal coefficients, prolonging battery pack lifespan by up to 2.4 years.
-                        </p>
-                    </div>
-
-                    <div class="bg-slate-900/60 p-6 rounded-2xl border border-slate-800 hover:border-brand-500/40 transition-all">
-                        <div class="w-10 h-10 rounded-lg bg-purple-500/10 text-purple-400 flex items-center justify-center mb-4">
-                            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                            </svg>
-                        </div>
-                        <h4 class="text-base font-bold text-white mb-2">Automated ESG & Fuel Audit</h4>
-                        <p class="text-xs text-slate-400 leading-relaxed">
-                            Generates certified carbon emissions and fuel burn logs ready for ISO 50001 compliance, carbon credit verification, and corporate reporting.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Architecture Section (How Claude is Integrated) -->
-        <section id="architecture" class="py-20 bg-slate-900/30 border-t border-slate-800/80">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center max-w-3xl mx-auto mb-16">
-                    <h2 class="text-xs uppercase font-mono tracking-widest text-cyan-400 mb-3">AI Deep Tech Stack</h2>
-                    <h3 class="text-3xl font-extrabold text-white tracking-tight sm:text-4xl">
-                        How Claude AI Powers Closed-Loop Microgrid Control
-                    </h3>
-                    <p class="mt-4 text-base text-slate-300">
-                        We leverage Claude 3.5 & 3.7 Sonnet as the supervisory reasoning core over deterministic numerical optimization solvers.
-                    </p>
-                </div>
-
-                <!-- Architecture Tabs -->
-                <div class="max-w-4xl mx-auto">
-                    <div class="flex border-b border-slate-800 mb-8 overflow-x-auto">
-                        <button id="tabBtn1" class="arch-tab-btn px-6 py-3 font-mono text-sm font-semibold border-b-2 border-brand-400 text-brand-400 transition-all">
-                            1. Ingestion & Forecasting
-                        </button>
-                        <button id="tabBtn2" class="arch-tab-btn px-6 py-3 font-mono text-sm font-semibold border-b-2 border-transparent text-slate-400 hover:text-slate-200 transition-all">
-                            2. Claude Reasoning & Tool Use
-                        </button>
-                        <button id="tabBtn3" class="arch-tab-btn px-6 py-3 font-mono text-sm font-semibold border-b-2 border-transparent text-slate-400 hover:text-slate-200 transition-all">
-                            3. Edge Execution & Feedback
-                        </button>
-                    </div>
-
-                    <div id="tabContent1" class="bg-slate-950 p-8 rounded-2xl border border-slate-800">
-                        <div class="flex items-center gap-3 mb-4">
-                            <span class="px-2.5 py-1 rounded bg-brand-500/10 text-brand-400 font-mono text-xs font-semibold">STAGE 01</span>
-                            <h4 class="text-xl font-bold text-white">Edge Telemetry & Multi-Modal Environmental Data</h4>
-                        </div>
-                        <p class="text-sm text-slate-300 mb-6 leading-relaxed">
-                            Our IoT Edge Gateway communicates directly with site inverters and engine control units (ECUs) via Modbus TCP and CANbus at 2 Hz. Telemetry is aggregated alongside localized numerical weather forecasts and solar satellite feeds.
-                        </p>
-                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 font-mono text-xs">
-                            <div class="p-3.5 bg-slate-900 rounded-xl border border-slate-800">
-                                <span class="text-slate-500 block mb-1">DATA CHANNELS</span>
-                                <span class="text-white font-semibold">PV Irradiance, BESS SoC, Genset RPM, Fuel Rate</span>
-                            </div>
-                            <div class="p-3.5 bg-slate-900 rounded-xl border border-slate-800">
-                                <span class="text-slate-500 block mb-1">LATENCY</span>
-                                <span class="text-brand-400 font-semibold">&lt; 150ms Ingestion Window</span>
-                            </div>
-                            <div class="p-3.5 bg-slate-900 rounded-xl border border-slate-800">
-                                <span class="text-slate-500 block mb-1">EDGE BUFFER</span>
-                                <span class="text-white font-semibold">Local SQLite + TimescaleDB</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="tabContent2" class="hidden bg-slate-950 p-8 rounded-2xl border border-slate-800">
-                        <div class="flex items-center gap-3 mb-4">
-                            <span class="px-2.5 py-1 rounded bg-cyan-500/10 text-cyan-400 font-mono text-xs font-semibold">STAGE 02</span>
-                            <h4 class="text-xl font-bold text-white">Claude Tool Use & Multi-Objective Optimization</h4>
-                        </div>
-                        <p class="text-sm text-slate-300 mb-6 leading-relaxed">
-                            Claude evaluates complex non-linear tradeoffs that traditional Linear Programs fail to capture: generator thermal wear penalties, cold-start carbon surges, and battery replacement cost schedules. Claude invokes specialized Python mathematical solvers (`scipy.optimize` / MILP) through tool calling to synthesize the optimum 4-hour dispatch schedule.
-                        </p>
-                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 font-mono text-xs">
-                            <div class="p-3.5 bg-slate-900 rounded-xl border border-slate-800">
-                                <span class="text-slate-500 block mb-1">AI CORE</span>
-                                <span class="text-cyan-400 font-semibold">Claude 3.5 / 3.7 Sonnet</span>
-                            </div>
-                            <div class="p-3.5 bg-slate-900 rounded-xl border border-slate-800">
-                                <span class="text-slate-500 block mb-1">TOOL CALLING</span>
-                                <span class="text-white font-semibold">DispatchSolver, GensetWearModel</span>
-                            </div>
-                            <div class="p-3.5 bg-slate-900 rounded-xl border border-slate-800">
-                                <span class="text-slate-500 block mb-1">CONSTRAINTS</span>
-                                <span class="text-white font-semibold">Zero-tripping &gt; 99.999%</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="tabContent3" class="hidden bg-slate-950 p-8 rounded-2xl border border-slate-800">
-                        <div class="flex items-center gap-3 mb-4">
-                            <span class="px-2.5 py-1 rounded bg-amber-500/10 text-amber-400 font-mono text-xs font-semibold">STAGE 03</span>
-                            <h4 class="text-xl font-bold text-white">Closed-Loop Deterministic Execution</h4>
-                        </div>
-                        <p class="text-sm text-slate-300 mb-6 leading-relaxed">
-                            The synthesized dispatch setpoints are validated by an on-site hardware watchdog before being written to PLC registers. If communication with the cloud is lost, the local edge agent continues autonomous dispatch in fail-safe mode.
-                        </p>
-                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 font-mono text-xs">
-                            <div class="p-3.5 bg-slate-900 rounded-xl border border-slate-800">
-                                <span class="text-slate-500 block mb-1">SAFETY MECHANISM</span>
-                                <span class="text-amber-400 font-semibold">Hardware Watchdog & Interlocks</span>
-                            </div>
-                            <div class="p-3.5 bg-slate-900 rounded-xl border border-slate-800">
-                                <span class="text-slate-500 block mb-1">OFFLINE BACKUP</span>
-                                <span class="text-white font-semibold">Local Deterministic Policy</span>
-                            </div>
-                            <div class="p-3.5 bg-slate-900 rounded-xl border border-slate-800">
-                                <span class="text-slate-500 block mb-1">PROTOCOL DISPATCH</span>
-                                <span class="text-white font-semibold">Modbus RTU / DNP3</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Interactive ROI & Fuel Savings Calculator -->
-        <section id="calculator" class="py-20 bg-slate-950">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center max-w-3xl mx-auto mb-16">
-                    <h2 class="text-xs uppercase font-mono tracking-widest text-brand-400 mb-3">Cost & Impact Simulation</h2>
-                    <h3 class="text-3xl font-extrabold text-white tracking-tight sm:text-4xl">
-                        Calculate Your Estimated Diesel Savings
-                    </h3>
-                    <p class="mt-4 text-base text-slate-300">
-                        Adjust your site's physical parameters below to see projected fuel reductions, genset cycle reductions, and annual cost savings.
-                    </p>
+                    <p class="mt-4 text-slate-300">Input your current genset specs and load. We calculate the required Solar/BESS capacity and your estimated payback period based on UAE diesel rates.</p>
                 </div>
 
                 <div class="max-w-5xl mx-auto grid lg:grid-cols-12 gap-8 items-start">
-                    <!-- Controls -->
-                    <div class="lg:col-span-7 bg-slate-900/80 p-6 sm:p-8 rounded-2xl border border-slate-800 shadow-xl space-y-6">
-                        <!-- Slider 1: Solar -->
+                    <!-- Input Controls -->
+                    <div class="lg:col-span-7 bg-slate-900/80 p-6 sm:p-8 rounded-2xl border border-slate-800 space-y-6">
+                        <!-- Genset Unit Capacity -->
                         <div>
                             <div class="flex justify-between items-center mb-2">
-                                <label for="sliderSolar" class="text-sm font-semibold text-slate-200">Solar PV Array Size</label>
-                                <span class="text-sm font-mono text-brand-400 font-bold" id="valSolar">600 kWp</span>
+                                <label class="text-sm font-semibold text-slate-200">Single Genset Capacity</label>
+                                <span class="text-sm font-mono text-amber-400 font-bold" id="valGensetCap">500 kVA</span>
                             </div>
-                            <input id="sliderSolar" type="range" min="100" max="2500" step="50" value="600" class="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-brand-400">
-                            <div class="flex justify-between text-[11px] text-slate-500 mt-1 font-mono">
-                                <span>100 kWp</span>
-                                <span>2,500 kWp</span>
-                            </div>
+                            <input id="sliderGensetCap" type="range" min="100" max="2500" step="50" value="500" class="w-full h-2 bg-slate-800 rounded-lg appearance-none accent-amber-400">
                         </div>
 
-                        <!-- Slider 2: BESS -->
+                        <!-- Genset Quantity -->
                         <div>
                             <div class="flex justify-between items-center mb-2">
-                                <label for="sliderBess" class="text-sm font-semibold text-slate-200">Battery Energy Storage (BESS)</label>
-                                <span class="text-sm font-mono text-cyan-400 font-bold" id="valBess">1,200 kWh</span>
+                                <label class="text-sm font-semibold text-slate-200">Number of Gensets</label>
+                                <span class="text-sm font-mono text-amber-400 font-bold" id="valGensetQty">2 Units</span>
                             </div>
-                            <input id="sliderBess" type="range" min="200" max="5000" step="100" value="1200" class="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-cyan-400">
-                            <div class="flex justify-between text-[11px] text-slate-500 mt-1 font-mono">
-                                <span>200 kWh</span>
-                                <span>5,000 kWh</span>
-                            </div>
+                            <input id="sliderGensetQty" type="range" min="1" max="10" step="1" value="2" class="w-full h-2 bg-slate-800 rounded-lg appearance-none accent-amber-400">
                         </div>
 
-                        <!-- Slider 3: Average Load -->
+                        <!-- Site Load -->
                         <div>
                             <div class="flex justify-between items-center mb-2">
-                                <label for="sliderLoad" class="text-sm font-semibold text-slate-200">Continuous Average Load</label>
-                                <span class="text-sm font-mono text-amber-400 font-bold" id="valLoad">450 kW</span>
+                                <label class="text-sm font-semibold text-slate-200">Continuous Average Site Load</label>
+                                <span class="text-sm font-mono text-cyan-400 font-bold" id="valLoad">400 kW</span>
                             </div>
-                            <input id="sliderLoad" type="range" min="100" max="2000" step="50" value="450" class="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-amber-400">
-                            <div class="flex justify-between text-[11px] text-slate-500 mt-1 font-mono">
-                                <span>100 kW</span>
-                                <span>2,000 kW</span>
-                            </div>
+                            <input id="sliderLoad" type="range" min="50" max="4000" step="50" value="400" class="w-full h-2 bg-slate-800 rounded-lg appearance-none accent-cyan-400">
                         </div>
 
-                        <!-- Slider 4: Diesel Price -->
+                        <!-- UAE Diesel Price -->
                         <div>
                             <div class="flex justify-between items-center mb-2">
-                                <label for="sliderDieselPrice" class="text-sm font-semibold text-slate-200">Delivered Diesel Fuel Cost</label>
-                                <span class="text-sm font-mono text-white font-bold" id="valDieselPrice">$1.40 / Liter</span>
+                                <label class="text-sm font-semibold text-slate-200">Current UAE Diesel Price</label>
+                                <span class="text-sm font-mono text-emerald-400 font-bold" id="valDieselPrice">2.95 AED/L</span>
                             </div>
-                            <input id="sliderDieselPrice" type="range" min="0.80" max="3.00" step="0.05" value="1.40" class="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-emerald-400">
-                            <div class="flex justify-between text-[11px] text-slate-500 mt-1 font-mono">
-                                <span>$0.80/L</span>
-                                <span>$3.00/L</span>
-                            </div>
+                            <input id="sliderDieselPrice" type="range" min="2.00" max="4.50" step="0.05" value="2.95" class="w-full h-2 bg-slate-800 rounded-lg appearance-none accent-emerald-400">
                         </div>
                     </div>
 
                     <!-- Output Card -->
                     <div class="lg:col-span-5 bg-gradient-to-br from-slate-900 to-slate-950 p-6 sm:p-8 rounded-2xl border border-brand-500/30 shadow-2xl glow-emerald space-y-6">
                         <div class="border-b border-slate-800 pb-4">
-                            <span class="text-xs uppercase font-mono text-slate-400">ANNUAL VALUE ESTIMATION</span>
-                            <div class="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-cyan-300 font-mono mt-1" id="resAnnualSavings">
-                                $228,480
+                            <span class="text-xs uppercase font-mono text-slate-400">ESTIMATED FUEL SAVED</span>
+                            <div class="text-4xl font-extrabold text-brand-400 font-mono mt-1" id="resFuelLiters">
+                                0 L/Year
                             </div>
-                            <p class="text-xs text-brand-400 font-medium mt-1">Direct Operational Cost (OPEX) Reduction</p>
                         </div>
 
                         <div class="space-y-4 font-mono text-xs">
                             <div class="flex justify-between items-center py-2 border-b border-slate-800/80">
-                                <span class="text-slate-400">Diesel Fuel Saved / Year</span>
-                                <span class="text-white font-bold text-sm" id="resFuelLiters">163,200 Liters</span>
+                                <span class="text-slate-400">Recommended Solar PV Array</span>
+                                <span class="text-amber-400 font-bold text-sm" id="resSolarRec">0 kWp</span>
                             </div>
-
                             <div class="flex justify-between items-center py-2 border-b border-slate-800/80">
-                                <span class="text-slate-400">Genset Start Cycles Cut</span>
-                                <span class="text-cyan-400 font-bold text-sm" id="resStartsCut">-62.5%</span>
+                                <span class="text-slate-400">Recommended Battery (BESS)</span>
+                                <span class="text-cyan-400 font-bold text-sm" id="resBessRec">0 kWh</span>
                             </div>
-
                             <div class="flex justify-between items-center py-2 border-b border-slate-800/80">
-                                <span class="text-slate-400">CO2 Emissions Avoided</span>
-                                <span class="text-brand-400 font-bold text-sm" id="resCo2Offset">437 Metric Tons</span>
+                                <span class="text-slate-400">Genset Run-Hours Cut</span>
+                                <span class="text-white font-bold text-sm">Up to 65%</span>
                             </div>
-
-                            <div class="flex justify-between items-center py-2">
-                                <span class="text-slate-400">Est. Payback Horizon</span>
-                                <span class="text-amber-400 font-bold text-sm" id="resPayback">4.2 Months</span>
+                            <div class="flex justify-between items-center py-2 bg-brand-500/10 px-3 rounded-lg border border-brand-500/20">
+                                <span class="text-brand-400 font-semibold text-sm">Estimated Payback</span>
+                                <span class="text-brand-400 font-bold text-lg" id="resPayback">0 Months</span>
                             </div>
                         </div>
 
-                        <button id="calcCtaBtn" class="w-full py-3.5 rounded-xl font-semibold text-slate-950 bg-gradient-to-r from-brand-400 to-brand-500 hover:from-brand-300 hover:to-brand-400 text-sm shadow-lg shadow-brand-500/25 transition-all">
-                            Request Custom Audit Report
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Hardware & Inverter Compatibility -->
-        <section id="compatibility" class="py-20 bg-slate-900/40 border-t border-slate-800/80">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center max-w-3xl mx-auto mb-16">
-                    <h2 class="text-xs uppercase font-mono tracking-widest text-brand-400 mb-3">Interoperability</h2>
-                    <h3 class="text-3xl font-extrabold text-white tracking-tight sm:text-4xl">
-                        Plugs Seamlessly Into Your Existing Plant
-                    </h3>
-                    <p class="mt-4 text-base text-slate-300">
-                        Zero hardware lock-in. Electricity-SI communicates with leading genset controllers, PCS inverters, and battery management systems.
-                    </p>
-                </div>
-
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto font-mono text-center">
-                    <div class="p-5 bg-slate-950 rounded-xl border border-slate-800">
-                        <span class="text-slate-400 text-xs block mb-1">GENSET CONTROLLERS</span>
-                        <span class="text-sm font-bold text-white">ComAp, Deep Sea, Woodward, Deif</span>
-                    </div>
-                    <div class="p-5 bg-slate-950 rounded-xl border border-slate-800">
-                        <span class="text-slate-400 text-xs block mb-1">SOLAR INVERTERS</span>
-                        <span class="text-sm font-bold text-white">SMA, Sungrow, Huawei, Schneider</span>
-                    </div>
-                    <div class="p-5 bg-slate-950 rounded-xl border border-slate-800">
-                        <span class="text-slate-400 text-xs block mb-1">PROTOCOLS</span>
-                        <span class="text-sm font-bold text-white">Modbus TCP/RTU, CAN, DNP3</span>
-                    </div>
-                    <div class="p-5 bg-slate-950 rounded-xl border border-slate-800">
-                        <span class="text-slate-400 text-xs block mb-1">DEPLOYMENT</span>
-                        <span class="text-sm font-bold text-brand-400">DIN-Rail Edge Box / SaaS</span>
+                        <a href="https://wa.me/971541527985" target="_blank" class="block text-center w-full py-3.5 rounded-xl font-semibold text-slate-950 bg-brand-400 hover:bg-brand-300 text-sm">
+                            Get Detailed Proposal
+                        </a>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- CTA Section -->
-        <section class="py-20 relative overflow-hidden bg-gradient-to-b from-slate-950 to-brand-950/30 border-t border-slate-800">
+        <section class="py-20 bg-gradient-to-b from-slate-950 to-brand-950/30 border-t border-slate-800">
             <div class="max-w-4xl mx-auto px-4 text-center">
-                <h3 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-4">
-                    Ready to Stop Burning Thousands in Wasted Fuel?
-                </h3>
-                <p class="text-slate-300 mb-8 max-w-2xl mx-auto text-sm sm:text-base">
-                    Join early industrial pilot partners who cut genset run hours within the first 14 days of activation.
-                </p>
-                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                    <button id="bottomDemoBtn" class="w-full sm:w-auto px-8 py-4 rounded-xl font-semibold text-slate-950 bg-gradient-to-r from-brand-400 to-brand-500 hover:from-brand-300 hover:to-brand-400 shadow-xl shadow-brand-500/25 transition-all text-sm">
-                        Schedule a Site Evaluation
-                    </button>
-                    <a href="mailto:zhou@electricity-si.com" class="w-full sm:w-auto px-8 py-4 rounded-xl font-semibold text-slate-200 bg-slate-900 hover:bg-slate-800 border border-slate-700 transition-all text-sm font-mono flex items-center justify-center gap-2">
-                        <svg class="w-4 h-4 text-brand-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                        </svg>
-                        <span>zhou@electricity-si.com</span>
+                <h3 class="text-3xl font-extrabold text-white mb-6">Ready to Optimize Your Plant?</h3>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="https://wa.me/971541527985" target="_blank" class="px-8 py-4 rounded-xl font-semibold text-slate-950 bg-brand-400 hover:bg-brand-300 transition-all font-mono">
+                        WhatsApp: +971 54 152 7985
+                    </a>
+                    <a href="mailto:zhou@electricity-si.com" class="px-8 py-4 rounded-xl font-semibold text-slate-200 bg-slate-900 border border-slate-700 transition-all font-mono">
+                        zhou@electricity-si.com
                     </a>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-slate-950 border-t border-slate-800/80 py-12 text-slate-400 text-xs">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
-            <div class="flex items-center space-x-3">
-                <div class="w-7 h-7 rounded-lg bg-brand-500 flex items-center justify-center text-slate-950 font-bold text-xs">
-                    ESI
-                </div>
-                <span class="font-bold text-white text-sm">Electricity-SI Technologies</span>
-                <span class="text-slate-500 font-mono">| Microgrid Energy Intelligence</span>
-            </div>
-
-            <div class="flex flex-wrap items-center gap-6 text-slate-400">
-                <a href="#capabilities" class="hover:text-white transition-colors">Features</a>
-                <a href="#architecture" class="hover:text-white transition-colors">Architecture</a>
-                <a href="#calculator" class="hover:text-white transition-colors">ROI Calculator</a>
-                <a href="mailto:zhou@electricity-si.com" class="hover:text-brand-400 transition-colors font-mono">zhou@electricity-si.com</a>
-            </div>
-
-            <div class="font-mono text-slate-500">
-                &copy; 2026 Electricity-SI Technologies. All rights reserved.
-            </div>
-        </div>
-    </footer>
-
-    <!-- Pilot Demo Request Modal -->
-    <div id="demoModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300">
-        <div class="bg-slate-900 border border-slate-800 rounded-2xl max-w-lg w-full p-6 sm:p-8 shadow-2xl relative text-left">
-            <button id="closeModalBtn" class="absolute top-4 right-4 text-slate-400 hover:text-white p-1">
-                <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                </svg>
-            </button>
-
-            <div id="modalFormContainer">
-                <div class="flex items-center gap-2 mb-2">
-                    <span class="w-2.5 h-2.5 rounded-full bg-brand-400"></span>
-                    <span class="text-xs font-mono uppercase tracking-wider text-brand-400 font-semibold">PILOT APPLICATION</span>
-                </div>
-                <h3 class="text-2xl font-bold text-white mb-2">Request a Microgrid Evaluation</h3>
-                <p class="text-xs text-slate-400 mb-6">
-                    Fill out your site specs below. Our energy engineering team (<span class="font-mono text-brand-400">zhou@electricity-si.com</span>) will review your topology and schedule a technical briefing.
-                </p>
-
-                <form id="pilotForm" class="space-y-4">
-                    <div>
-                        <label for="inputName" class="block text-xs font-medium text-slate-300 mb-1">Your Full Name</label>
-                        <input type="text" id="inputName" required placeholder="Alex Rivera" class="w-full px-3.5 py-2.5 bg-slate-950 border border-slate-800 rounded-xl text-sm text-white placeholder-slate-600 focus:outline-none focus:border-brand-500">
-                    </div>
-                    <div>
-                        <label for="inputEmail" class="block text-xs font-medium text-slate-300 mb-1">Work Email</label>
-                        <input type="email" id="inputEmail" required placeholder="alex@energy-corp.com" class="w-full px-3.5 py-2.5 bg-slate-950 border border-slate-800 rounded-xl text-sm text-white placeholder-slate-600 focus:outline-none focus:border-brand-500">
-                    </div>
-                    <div class="grid grid-cols-2 gap-3">
-                        <div>
-                            <label for="inputSiteType" class="block text-xs font-medium text-slate-300 mb-1">Site Application</label>
-                            <select id="inputSiteType" class="w-full px-3.5 py-2.5 bg-slate-950 border border-slate-800 rounded-xl text-sm text-white focus:outline-none focus:border-brand-500">
-                                <option value="mining">Remote Mining / Quarry</option>
-                                <option value="island">Island Microgrid / Resort</option>
-                                <option value="industrial">Industrial Off-Grid</option>
-                                <option value="datacenter">Data Center Microgrid</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label for="inputGensetSize" class="block text-xs font-medium text-slate-300 mb-1">Total Genset Rating</label>
-                            <input type="text" id="inputGensetSize" required placeholder="e.g. 1,500 kVA" class="w-full px-3.5 py-2.5 bg-slate-950 border border-slate-800 rounded-xl text-sm text-white placeholder-slate-600 focus:outline-none focus:border-brand-500">
-                        </div>
-                    </div>
-                    <button type="submit" class="w-full mt-2 py-3 rounded-xl font-semibold text-slate-950 bg-gradient-to-r from-brand-400 to-brand-500 hover:from-brand-300 hover:to-brand-400 text-sm transition-all shadow-lg shadow-brand-500/20">
-                        Submit Pilot Inquiry
-                    </button>
-                </form>
-            </div>
-
-            <!-- Success State -->
-            <div id="modalSuccessContainer" class="hidden text-center py-8">
-                <div class="w-14 h-14 bg-brand-500/10 text-brand-400 rounded-full flex items-center justify-center mx-auto mb-4 border border-brand-500/30">
-                    <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                    </svg>
-                </div>
-                <h4 class="text-xl font-bold text-white mb-2">Pilot Request Dispatched</h4>
-                <p class="text-xs text-slate-300 max-w-sm mx-auto mb-6">
-                    Thank you. We have recorded your parameters. An engineer from Electricity-SI will contact your team within 24 business hours at <span class="font-mono text-brand-400">zhou@electricity-si.com</span>.
-                </p>
-                <button id="resetModalBtn" class="px-5 py-2.5 bg-slate-800 hover:bg-slate-700 text-white rounded-xl text-xs font-semibold">
-                    Close Window
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Interactive Script -->
     <script>
-        // Tab switcher
-        const tabBtns = [document.getElementById('tabBtn1'), document.getElementById('tabBtn2'), document.getElementById('tabBtn3')];
-        const tabContents = [document.getElementById('tabContent1'), document.getElementById('tabContent2'), document.getElementById('tabContent3')];
+        // Sizing & Payback Logic (AED Native)
+        const sGensetCap = document.getElementById('sliderGensetCap');
+        const sGensetQty = document.getElementById('sliderGensetQty');
+        const sLoad = document.getElementById('sliderLoad');
+        const sPrice = document.getElementById('sliderDieselPrice');
 
-        tabBtns.forEach((btn, index) => {
-            btn.addEventListener('click', () => {
-                tabBtns.forEach(b => {
-                    b.classList.remove('border-brand-400', 'text-brand-400');
-                    b.classList.add('border-transparent', 'text-slate-400');
-                });
-                tabContents.forEach(c => c.classList.add('hidden'));
-
-                btn.classList.add('border-brand-400', 'text-brand-400');
-                btn.classList.remove('border-transparent', 'text-slate-400');
-                tabContents[index].classList.remove('hidden');
-            });
-        });
-
-        // ROI Calculator Logic
-        const sliderSolar = document.getElementById('sliderSolar');
-        const sliderBess = document.getElementById('sliderBess');
-        const sliderLoad = document.getElementById('sliderLoad');
-        const sliderDieselPrice = document.getElementById('sliderDieselPrice');
-
-        const valSolar = document.getElementById('valSolar');
-        const valBess = document.getElementById('valBess');
+        const valGenCap = document.getElementById('valGensetCap');
+        const valGenQty = document.getElementById('valGensetQty');
         const valLoad = document.getElementById('valLoad');
-        const valDieselPrice = document.getElementById('valDieselPrice');
+        const valPrice = document.getElementById('valDieselPrice');
 
-        const resAnnualSavings = document.getElementById('resAnnualSavings');
+        const resSolarRec = document.getElementById('resSolarRec');
+        const resBessRec = document.getElementById('resBessRec');
         const resFuelLiters = document.getElementById('resFuelLiters');
-        const resStartsCut = document.getElementById('resStartsCut');
-        const resCo2Offset = document.getElementById('resCo2Offset');
         const resPayback = document.getElementById('resPayback');
 
-        function updateCalculator() {
-            const solar = parseFloat(sliderSolar.value);
-            const bess = parseFloat(sliderBess.value);
-            const load = parseFloat(sliderLoad.value);
-            const price = parseFloat(sliderDieselPrice.value);
+        function updateSimulation() {
+            const cap = parseFloat(sGensetCap.value);
+            const qty = parseFloat(sGensetQty.value);
+            const load = parseFloat(sLoad.value);
+            const priceAED = parseFloat(sPrice.value);
 
-            valSolar.textContent = `${solar.toLocaleString()} kWp`;
-            valBess.textContent = `${bess.toLocaleString()} kWh`;
+            // Update Labels
+            valGenCap.textContent = `${cap.toLocaleString()} kVA`;
+            valGenQty.textContent = `${qty} Unit${qty>1?'s':''}`;
             valLoad.textContent = `${load.toLocaleString()} kW`;
-            valDieselPrice.textContent = `$${price.toFixed(2)} / Liter`;
+            valPrice.textContent = `${priceAED.toFixed(2)} AED/L`;
 
-            // Microgrid physics approximation:
-            const dailyEnergyReq = load * 24; // kWh
-            const reRatio = Math.min(0.78, (solar * 4.8 + bess * 0.85) / dailyEnergyReq);
-            const aiOptimizationFactor = 0.32 + (reRatio * 0.20); // 32% to 52% diesel burn reduction
-            
-            const baselineDailyLiters = dailyEnergyReq * 0.27;
-            const dailySavedLiters = baselineDailyLiters * aiOptimizationFactor;
+            // Recommendation Logic (Rule of thumb: Solar = 1.5x Load, BESS = 2.5x Load)
+            const recSolar = Math.round(load * 1.5);
+            const recBess = Math.round(load * 2.5);
+
+            // Fuel Savings (Baseline: 0.28 L/kWh, 65% offset)
+            const dailyLoadKwh = load * 24;
+            const baselineLiters = dailyLoadKwh * 0.28;
+            const dailySavedLiters = baselineLiters * 0.65;
             const annualSavedLiters = dailySavedLiters * 365;
-            const annualDollarSavings = annualSavedLiters * price;
-            const co2SavedTons = (annualSavedLiters * 2.68) / 1000; // 2.68 kg CO2/L diesel
 
-            const bessAutonomyHours = bess / load;
-            const startsReductionPct = Math.min(78, Math.max(45, 45 + bessAutonomyHours * 8));
+            // Cost Logic strictly in AED
+            // Market Benchmark: Solar ~2000 AED/kWp, BESS ~1100 AED/kWh
+            const costPerKwpAED = 2000;
+            const costPerKwhAED = 1100;
+            const estSystemCostAED = (recSolar * costPerKwpAED) + (recBess * costPerKwhAED);
+            
+            const annualSavingsAED = annualSavedLiters * priceAED;
+            
+            const paybackYears = estSystemCostAED / annualSavingsAED;
+            const paybackMonths = Math.max(12, Math.round(paybackYears * 12));
 
-            const estSystemCost = 45000 + (solar * 15);
-            const paybackMonths = Math.max(1.8, Math.min(12.0, (estSystemCost / annualDollarSavings) * 12));
-
-            resAnnualSavings.textContent = `$${Math.round(annualDollarSavings).toLocaleString()}`;
-            resFuelLiters.textContent = `${Math.round(annualSavedLiters).toLocaleString()} Liters`;
-            resStartsCut.textContent = `-${startsReductionPct.toFixed(1)}%`;
-            resCo2Offset.textContent = `${Math.round(co2SavedTons).toLocaleString()} Metric Tons`;
-            resPayback.textContent = `${paybackMonths.toFixed(1)} Months`;
+            // Display Results
+            resSolarRec.textContent = `${recSolar.toLocaleString()} kWp`;
+            resBessRec.textContent = `${recBess.toLocaleString()} kWh`;
+            resFuelLiters.textContent = `${Math.round(annualSavedLiters).toLocaleString()} L/Year`;
+            
+            const pYears = Math.floor(paybackMonths / 12);
+            const pMonths = paybackMonths % 12;
+            resPayback.textContent = pYears > 0 ? `${pYears} Years, ${pMonths} Months` : `${pMonths} Months`;
         }
 
-        [sliderSolar, sliderBess, sliderLoad, sliderDieselPrice].forEach(input => {
-            input.addEventListener('input', updateCalculator);
-        });
-        updateCalculator();
-
-        // Modal Controls
-        const demoModal = document.getElementById('demoModal');
-        const closeModalBtn = document.getElementById('closeModalBtn');
-        const pilotForm = document.getElementById('pilotForm');
-        const modalFormContainer = document.getElementById('modalFormContainer');
-        const modalSuccessContainer = document.getElementById('modalSuccessContainer');
-        const resetModalBtn = document.getElementById('resetModalBtn');
-
-        const triggerButtons = [
-            document.getElementById('navDemoBtn'),
-            document.getElementById('heroDemoBtn'),
-            document.getElementById('calcCtaBtn'),
-            document.getElementById('bottomDemoBtn')
-        ];
-
-        function openModal() {
-            demoModal.classList.remove('opacity-0', 'pointer-events-none');
-            demoModal.classList.add('opacity-100', 'pointer-events-auto');
-        }
-
-        function closeModal() {
-            demoModal.classList.remove('opacity-100', 'pointer-events-auto');
-            demoModal.classList.add('opacity-0', 'pointer-events-none');
-        }
-
-        triggerButtons.forEach(btn => {
-            if (btn) btn.addEventListener('click', openModal);
-        });
-
-        closeModalBtn.addEventListener('click', closeModal);
-        resetModalBtn.addEventListener('click', () => {
-            closeModal();
-            setTimeout(() => {
-                modalFormContainer.classList.remove('hidden');
-                modalSuccessContainer.classList.add('hidden');
-                pilotForm.reset();
-            }, 300);
-        });
-
-        pilotForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            modalFormContainer.classList.add('hidden');
-            modalSuccessContainer.classList.remove('hidden');
-        });
-
-        // Close on outside click
-        demoModal.addEventListener('click', (e) => {
-            if (e.target === demoModal) closeModal();
-        });
+        [sGensetCap, sGensetQty, sLoad, sPrice].forEach(el => el.addEventListener('input', updateSimulation));
+        updateSimulation();
     </script>
 </body>
 </html>
